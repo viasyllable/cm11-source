@@ -1,0 +1,17 @@
+1、首先定位到CM11的目录
+
+    repo init -u git://github.com/CyanogenMod/android.git -b cm-11.0
+
+完成后，再定位到.repo目录，用ls命令列出目录与CM10.1目录的.repo进行对比，发现CM10.1目录多了projects目录和project.list文件
+
+ 
+
+2、再在CM11目录下用 ln -s 命令进行软链接。软链接到CM10.1/.repo下的 projects目录 和 project.list文件
+
+    ln -s ~/cm10.1/.repo/projects projects
+    ln -s ~/cm10.1/.repo/project.list project.list
+    ln -s <目标文件/目录> <软链接文件/目录>
+
+ 
+
+3、然后再在CM11的目录下进行 repo sync 即可。速度取决与硬盘的读写速度和网速。
